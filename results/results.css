@@ -9,6 +9,12 @@ body
   margin:0%;
   background-image: url('back-img.png');
   background-repeat: no-repeat;
+  font-family:SF;
+}
+@font-face {
+  font-family: SF;
+  src: url(FontsFree-Net-SFProText-Regular-1.ttf);
+  font-weight: bold;
 }
 img
 {
