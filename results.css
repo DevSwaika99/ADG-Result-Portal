@@ -102,7 +102,7 @@ button:focus {
     margin: auto;
 }
 
-.nfound {
+.nfound,.invalid {
     color: red;
     text-align: center;
     padding: 20px;

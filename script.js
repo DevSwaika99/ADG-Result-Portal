@@ -8,10 +8,16 @@ document.querySelector('.input').addEventListener('keyup',function(event){
 });
 
 function searchText(){
-{
         output=""
         flag=0;
         var search=document.querySelector('.input').value.toUpperCase();
+        document.querySelector('.input').value=search;
+        if (search=='') {
+            output=`<h1 class="nfound">Please enter a valid Register Number<h1>`;
+            flag=1;
+            }
+        
+        else {
         if(search=='19MIS0411')
             {
             output+=`
@@ -22,15 +28,15 @@ function searchText(){
             </div>
             `
             flag=1;
-            }
-        };
+            }}
 
         if(flag==0)
         {
             output=`<h1 class="nfound">Sorry you were not Shortlisted. Try again next year !<h1>`;
         }
         document.querySelector('.output').innerHTML=output;
-    }        
+} 
+         
 
 function clearText(){
     document.querySelector('.output').innerHTML='';
