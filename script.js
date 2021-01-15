@@ -8,35 +8,31 @@ document.querySelector('.input').addEventListener('keyup',function(event){
 });
 
 function searchText(){
-        output=""
-        flag=0;
-        var search=document.querySelector('.input').value.toUpperCase();
-        //document.querySelector('.input').value=search;
-        if (search=='') {
-            output=`<h1 class="nfound">Please enter a valid Register Number<h1>`;
-            flag=1;
-            }
-        
+    output=""
+    var search=document.querySelector('.input').value.toUpperCase();
+    const adg = `http://adgrecruitments.herokuapp.com/user/getResult?regno=${search}`;
+    fetch(adg)
+    .then(function(res){
+      return res.json();
+    })
+    .then(function(data){
+        if (data.message=='User does Not Exist'){
+            output+=`<h1 class="nfound">${data.message}<h1>`;
+        }
+        else if (data.message=='Hey, you missed it by a narrow margin. All the best for future endeavours!'){
+            output+=`<h1 class="found_1">${data.message}<h1>`;
+        }
         else {
-        if(search=='19MIS0411')
-            {
-            output+=`
-            <div class="container info">      
+            output+=`<div class="container info">      
             <p>
-                Congratulations! You have been Shortlisted for Round 2 in the following Domains. 
+                ${data.message}
             </p> 
-            </div>
-            `
-            flag=1;
-            }}
-
-        if(flag==0)
-        {
-            output=`<h1 class="nfound">Sorry you were not Shortlisted. Try again next year !<h1>`;
+            </div>`;
         }
         document.querySelector('.output').innerHTML=output;
-} 
-         
+
+    });
+}
 
 function clearText(){
     document.querySelector('.output').innerHTML='';
