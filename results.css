@@ -29,6 +29,14 @@ body {
     padding: 20px 0;
 }
 
+.back {
+    background-color: #191919cc;
+    border-radius: 20px;
+    margin-left: 18%;
+    margin-right: 18%;
+    padding: 3%;
+}
+
 i {
     color: gray;
     font-size: 22px;
@@ -38,6 +46,7 @@ i {
 .cancel {
     background-color: white;
     cursor: pointer;
+    border-radius: 10px 0 0 10px;
 }
 
 .search {
@@ -48,13 +57,16 @@ i {
 }
 
 .search-btn {
-    padding: 10px;
+    padding: 10px 15px;
     background-color: dodgerblue;
     border: 1px solid dodgerblue;
     color: white;
     cursor: pointer;
     font-family: SF;
     font-size: 20px;
+    border-radius: 10px;
+    width: 34%;
+    margin-left: 33%;
 }
 
 .search-btn:hover {
@@ -64,11 +76,13 @@ i {
 }
 
 .input {
-    padding: 10px;
+    padding: 10.5px;
     border: 1px solid white;
     width: 30%;
     font-family: SF;
-    font-size: 20px;
+    font-size: 19px;
+    border-radius: 0 10px 10px 0;
+    text-transform: uppercase;
 }
 
 input::selection {
@@ -97,7 +111,7 @@ button:focus {
 }
 
 .output-container {
-    background-color: rgba(0, 0, 0, 0.534);
+    background-color: transparent;
     width: 80%;
     margin: auto;
 }
@@ -119,5 +133,15 @@ button:focus {
 @media (max-width: 576px) {
       .heading img {
           width: 60%;
+      }
+      .search-btn {
+          font-size: 15px;
+          width: 50%;
+          margin-left: 25%;
+      }
+      .input {
+          width: 50%;
+          font-size: 17px;
+          padding: 12px;
       }
   }

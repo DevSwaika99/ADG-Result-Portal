@@ -11,7 +11,7 @@ function searchText(){
         output=""
         flag=0;
         var search=document.querySelector('.input').value.toUpperCase();
-        document.querySelector('.input').value=search;
+        //document.querySelector('.input').value=search;
         if (search=='') {
             output=`<h1 class="nfound">Please enter a valid Register Number<h1>`;
             flag=1;
