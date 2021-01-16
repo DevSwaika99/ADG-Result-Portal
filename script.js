@@ -17,9 +17,17 @@ function searchText(){
     })
     .then(function(data){
         if (data.message=='User does Not Exist'){
-            output+=`<h1 class="nfound">${data.message}<h1>`;
+            if (search==''){
+                output+=`<h1 class="nfound">Please enter a Registration number<h1>`;
+            }
+            else{
+                output+=`<h1 class="nfound">${data.message}<h1>`;
+            }
         }
         else if (data.message=='Hey, you missed it by a narrow margin. All the best for future endeavours!'){
+            output+=`<h1 class="found_1">${data.message}<h1>`;
+        }
+        else if (data.message=='Hey, you missed it by a narrow margin. See you next year. Till then keep hustling.'){
             output+=`<h1 class="found_1">${data.message}<h1>`;
         }
         else {
