@@ -1,13 +1,14 @@
-document.querySelector(".search-btn").addEventListener('click',searchText);
+document.querySelector("#search").addEventListener('click',searchText);
 document.querySelector(".cancel").addEventListener('click',clearText);
 document.querySelector('.input').addEventListener('keyup',function(event){
     if (event.keyCode === 13) {
    event.preventDefault();
-   document.querySelector(".search-btn").click();
+   document.querySelector("#search").click();
   }
 });
 
 function searchText(){
+    document.querySelector("#search").disabled =true;
     output=""
     var search=document.querySelector('.input').value.toUpperCase();
     const adg = `http://adgrecruitments.herokuapp.com/user/getResult?regno=${search}`;
@@ -38,6 +39,7 @@ function searchText(){
             </div>`;
         }
         document.querySelector('.output').innerHTML=output;
+        document.querySelector("#search").disabled=false;
 
     });
 }

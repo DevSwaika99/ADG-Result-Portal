@@ -70,10 +70,29 @@ i {
     margin-left: 33%;
 }
 
+.disable {
+    padding: 10px 15px;
+    background-color: gray;
+    border: 1px solid gray;
+    color: gray;
+    cursor: pointer;
+    font-family: SF;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 34%;
+    margin-left: 33%;
+}
+
 .search-btn:hover {
     background-color: transparent;
     border: 1px solid dodgerblue;
     color: dodgerblue;
+}
+
+.disable:hover {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: gray;
 }
 
 .input {
@@ -84,6 +103,10 @@ i {
     font-size: 19px;
     border-radius: 0 10px 10px 0;
     text-transform: uppercase;
+}
+
+input::placeholder{
+    text-transform: capitalize;
 }
 
 input::selection {
