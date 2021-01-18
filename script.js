@@ -11,7 +11,7 @@ function searchText(){
     document.querySelector("#search").disabled =true;
     output=""
     var search=document.querySelector('.input').value.toUpperCase();
-    const adg = `http://adgrecruitments.herokuapp.com/user/getResult?regno=${search}`;
+    const adg = `https://adgrecruitments.herokuapp.com/user/getResult?regno=${search}`;
     fetch(adg)
     .then(function(res){
       return res.json();
